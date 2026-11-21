@@ -1,4 +1,4 @@
-# Astra
+# Astra: a governor and display calibration for the RedMagic Astra
 
 Smooth frame rates on the RedMagic Astra without Diablo mode, and a screen
 that refreshes at the rate it claims to.
@@ -47,7 +47,7 @@ timing: its values were measured at the panel on those two builds only.
 ## Install
 
 1. Download `astra-<version>.zip` from the repository's
-   [Releases](https://github.com/aurokin/astra-governor/releases) page (or build
+   [Releases](https://github.com/aurokin/redmagic-astra-tuner/releases) page (or build
    it with `sh module/build-zip.sh`).
 2. In the Magisk app: **Modules → Install from storage**, pick the zip. It
    installs the module and the **Astra** app.
