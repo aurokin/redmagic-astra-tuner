@@ -19,7 +19,7 @@ Dates are 2026.
 | 11-19 | GBA and NES choices; the mode change made through SurfaceFlinger instead of the saved setting. Tablet updated to RedMagicOS 11.0.8MR1 keeping root; every rate measured again. A second restart on waking; a matched comparison could not reproduce it. The governor measured again on the new build. **One module, one app**: the governor's switch remembered, calibration off until switched on. That night the restart was reproduced by switching the screen off inside calibration runs, its cause found, and calibration moved to the display driver's locked command path |
 | 11-20 | Frames held too long counted for 30 fps content; everything measured again on the final build. Release 0.4 |
 | 11-20 | Why Shadow of the Colossus paced worse in Rise and Diablo: the panel's rate, and in Rise the six performance cores left at 384 MHz. A minimum for them in games; calibration held off after a restart by itself; everything measured again. Release 0.4.1 |
-| 11-21 | Calibration cut short 1,999 more times overnight on 0.4.1 with no restart ([display.md](display.md#restarts-on-waking-found-and-fixed)). The package named **RedMagic Astra Tuner**: the repository (it was `astra-governor`), the module and the app (they were Astra) and the zip. The daemons are 0.4.1's byte for byte |
+| 11-21 | Calibration cut short 1,999 more times overnight on 0.4.1 with no restart ([display.md](display.md#restarts-on-waking-found-and-fixed)). The package named **RedMagic Astra Tuner**: the repository (it was `astra-governor`), the module and the app (they were Astra) and the zip. The daemons are 0.4.1's byte for byte. Release 0.4.2 |
 
 ## Why the first governor was replaced
 
