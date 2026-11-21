@@ -7,8 +7,8 @@ until [ "$(getprop sys.boot_completed)" = 1 ]; do sleep 2; done
 mkdir -p /data/adb/astra
 off() { [ -e "$MODDIR/disable" ] || [ -e "$MODDIR/remove" ]; }
 
-# Display calibration. It does nothing until it is switched on in the Astra
-# app. It exits 0 once the module is switched off or removed and factory
+# Display calibration. It does nothing until it is switched on in the app.
+# It exits 0 once the module is switched off or removed and factory
 # timing is back, and 73 when another instance is already running.
 (
   while ! off; do
@@ -26,7 +26,7 @@ while ! off; do
   # -base 1152: outside games, keep the six performance cores from idling below 1152 MHz while the
   #   screen is on, which is what makes video miss frames. Nothing else is done outside games.
   #   In a game that runs on the two prime cores, the other six keep the same minimum.
-  # -state: the on/off switch in the Astra app is remembered across restarts and reboots.
+  # -state: the on/off switch in the app is remembered across restarts and reboots.
   "$MODDIR/astrad2" -listen 127.0.0.1:7878 -log /data/adb/astra/astrad2.log -heat 48 -base 1152 -thrifty -state /data/adb/astra/governor &
   PID=$!
   while kill -0 $PID 2>/dev/null; do

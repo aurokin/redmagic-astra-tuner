@@ -1,7 +1,7 @@
 # Run by Magisk while installing the module.
 MODEL=$(getprop ro.product.model)
 BUILD=$(getprop ro.build.display.id)
-ui_print "- Astra for the RedMagic Astra (NP05J)"
+ui_print "- RedMagic Astra Tuner, for the RedMagic Astra (NP05J)"
 case "$MODEL$(getprop ro.product.name)$(getprop ro.product.device)" in
   *NP05J*|*np05j*) ;;
   *) abort "! This is not a RedMagic Astra (NP05J): $MODEL. Nothing was installed." ;;
@@ -36,12 +36,12 @@ fi
 # directories.
 APK=$MODPATH/Astra.apk
 if cat "$APK" | pm install -r -S "$(stat -c %s "$APK")" >/dev/null 2>&1; then
-  ui_print "- Installed the Astra app"
+  ui_print "- Installed the app"
 else
-  ui_print "! Could not install the Astra app. After the reboot, install"
+  ui_print "! Could not install the app. After the reboot, install"
   ui_print "!   /data/adb/modules/astra/Astra.apk by hand (as root)."
 fi
 
 ui_print "- Reboot to start. The governor and display calibration keep the"
 ui_print "  settings they had; on a first install the governor is on and"
-ui_print "  calibration is off until you switch it on in the Astra app."
+ui_print "  calibration is off until you switch it on in the app."

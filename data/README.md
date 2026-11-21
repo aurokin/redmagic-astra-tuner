@@ -16,10 +16,10 @@ python3 tools/results.py runs native3
 | Arm | What controlled the clocks |
 | --- | --- |
 | `stock`, `stockrise` | the vendor alone, in Balance / Rise |
-| `astrad` | the governor installed at the time, in Balance: the first governor before 2026-11-14 11:37 (`real1`, `real2`, `sweep*`, `loadgen-first`, `validate`), astra-governor after |
+| `astrad` | the governor installed at the time, in Balance: the first governor before 2026-11-14 11:37 (`real1`, `real2`, `sweep*`, `loadgen-first`, `validate`), the present governor after |
 | `rise` | the installed governor, in Rise |
 | `eco`, `diablo` | those vendor modes, the installed governor on (it stands down in Diablo) |
-| `v2`, `v2rise` | astra-governor run as a test build in Balance / Rise; flags after `+` (`v2rise+heat=48+thrifty`), `bin=NAME` for another build |
+| `v2`, `v2rise` | the present governor run as a test build in Balance / Rise; flags after `+` (`v2rise+heat=48+thrifty`), `bin=NAME` for another build |
 | `holdCxG` | the test build holding fixed minimums of C MHz (CPU) and G MHz (GPU) |
 | `staticN` | the vendor's own knobs held fixed (CPU-cap ratchet, GPU load gain N) |
 | `asis`, `p0=KHZ`, `gpu=N` | outside games: nothing touched, or a minimum held by hand |
@@ -46,7 +46,7 @@ python3 tools/results.py runs native3
 | Campaign | What it measured |
 | --- | --- |
 | `setup-check` | every staged scene launched and checked, nothing controlled |
-| `loadgen-first`, `validate`, `sweep1`-`sweep3` | synthetic loads: the vendor, the first governor, fixed knobs, astra-governor |
+| `loadgen-first`, `validate`, `sweep1`-`sweep3` | synthetic loads: the vendor, the first governor, fixed knobs, the present governor |
 | `real1`-`real7`, `dev` | emulator and native scenes at 60 Hz; `real2` is the main comparison |
 | `soak1`-`soak3` | twenty minutes or more of God of War II per arm |
 | `floors1` | fixed minimums, to see what minimums alone do |

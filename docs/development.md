@@ -6,7 +6,7 @@ Building, installing, checking and measuring a change.
 
 ```sh
 sh module/build.sh       # test and build everything into build/
-sh module/build-zip.sh   # the same, then build/astra-<version>.zip
+sh module/build-zip.sh   # the same, then build/redmagic-astra-tuner-<version>.zip
 ```
 
 `build.sh` needs Go, Java 17 or later, Python 3 and the Android SDK's
@@ -46,7 +46,7 @@ one.
 
 ```sh
 sh module/install.sh            # build, copy both daemons into the installed module, restart them; no reboot
-sh module/build-zip.sh          # build/astra-<version>.zip, for a fresh install from the Magisk app
+sh module/build-zip.sh          # build/redmagic-astra-tuner-<version>.zip, for a fresh install from the Magisk app
 SERIAL=... sh module/install.sh # another device
 adb install -r build/app/astra.apk   # the app alone
 ```
@@ -57,7 +57,7 @@ holds calibrated timing); a fresh device takes the zip. To install the zip
 from a computer exactly as the Magisk app would:
 
 ```sh
-adb push build/astra-0.4.1.zip /data/local/tmp/ && adb shell su -c 'magisk --install-module /data/local/tmp/astra-0.4.1.zip'
+adb push build/redmagic-astra-tuner-0.4.2.zip /data/local/tmp/ && adb shell su -c 'magisk --install-module /data/local/tmp/redmagic-astra-tuner-0.4.2.zip'
 ```
 
 `panel-service` takes SIGTERM as the module being switched off: it exits 0
@@ -83,7 +83,7 @@ busy 0.36+0.29 at 1996/525 MHz`.
 The test bench lives outside this repository, in
 `~/workspace/astra-root/lab` on the development Mac (git-tracked, local only;
 about 8 GB with its staged games and raw recordings). It finds this
-repository at `~/code/astra-governor`, or wherever `$ASTRA_GOVERNOR` points.
+repository at `~/code/redmagic-astra-tuner`, or wherever `$ASTRA_TUNER` points.
 
 After any change to the daemon, before installing it:
 
@@ -237,7 +237,7 @@ says it supports it.
 5. Record what was measured in [results.md](results.md) and, if a rule
    changed, in [control-law.md](control-law.md).
 6. Publish from a clean, pushed tree: `sh module/build-zip.sh`, then
-   `gh release create v<version> build/astra-<version>.zip` with notes on what
+   `gh release create v<version> build/redmagic-astra-tuner-<version>.zip` with notes on what
    changed and what was measured. Both scripts build with `-trimpath` from the
    same commit, so the release's daemons are byte for byte the ones installed
    in step 4 (compare `sha256sum /data/adb/modules/astra/astrad2`).

@@ -1,4 +1,4 @@
-# Astra: a governor and display calibration for the RedMagic Astra
+# RedMagic Astra Tuner
 
 Smooth frame rates on the RedMagic Astra without Diablo mode, and a screen
 that refreshes at the rate it claims to.
@@ -46,15 +46,15 @@ timing: its values were measured at the panel on those two builds only.
 
 ## Install
 
-1. Download `astra-<version>.zip` from the repository's
+1. Download `redmagic-astra-tuner-<version>.zip` from the repository's
    [Releases](https://github.com/aurokin/redmagic-astra-tuner/releases) page (or build
    it with `sh module/build-zip.sh`).
 2. In the Magisk app: **Modules → Install from storage**, pick the zip. It
-   installs the module and the **Astra** app.
+   installs the module and its app, both named **RedMagic Astra Tuner**.
 3. Reboot. The governor starts about 15 seconds after the tablet has booted.
 
 To update, install the new zip the same way. To remove everything, remove
-**Astra** in Magisk's Modules list and reboot: the governor, calibration and
+**RedMagic Astra Tuner** in Magisk's Modules list and reboot: the governor, calibration and
 the app all go, and the panel is back at factory timing. To pause both parts,
 switch the module off there: within a few seconds the governor hands the
 clocks back and the panel returns to factory timing. Switch it back on and
@@ -62,8 +62,8 @@ reboot to resume.
 
 ## Using the governor
 
-It is on after installing. **Astra → Governor** shows what it is doing and has
-its switch, which is remembered across reboots.
+It is on after installing. The app's **Governor** pane shows what it is doing
+and has its switch, which is remembered across reboots.
 
 - **Games must be in Game Space.** The governor only takes over in apps that
   Game Space treats as games, outside Diablo. Add an emulator or game to Game
@@ -85,7 +85,7 @@ its switch, which is remembered across reboots.
 
 ## Using display calibration
 
-Open **Astra → Display**. The large number is the panel's real refresh rate,
+Open the app's **Display** pane. The large number is the panel's real refresh rate,
 measured as you look at it. Switch on **Calibrate refresh rates** and choose
 what the 60 Hz mode should match:
 

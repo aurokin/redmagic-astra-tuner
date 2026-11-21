@@ -7,7 +7,7 @@ M=/data/adb/modules/astra
 T=${0%/*}
 [ -f $M/module.prop ] || { echo "the astra module is not installed: install the zip from the Magisk app first (module/build-zip.sh)"; exit 1; }
 if [ -e /data/adb/astra-panel-rate/table-session ]; then
-  echo "display calibration is on: switch it off in the Astra app and wait for Factory timing first"; exit 1
+  echo "display calibration is on: switch it off in the app and wait for Factory timing first"; exit 1
 fi
 # The supervisor goes first so it does not restart a daemon under us. The
 # governor restores every setting it holds when it gets the signal; the

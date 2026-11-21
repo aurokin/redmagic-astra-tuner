@@ -21,7 +21,7 @@ same thing.
 
 ## Summary
 
-| Scenario | Vendor alone | astra-governor | Diablo |
+| Scenario | Vendor alone | Governor | Diablo |
 | --- | --- | --- | --- |
 | Mario Galaxy, heavy scene, Balance | 71% speed, 0% clean, 17 late frames/s | 100% speed, every second clean, 4.5 W | the same frames at 7.5 W |
 | Emulator scenes, 60 Hz (16 scenes, Balance) | 7 of 16 below 90% clean | 15 of 16 at 88% clean or better | 1.5-2x the power; worse than the governor in two |
@@ -39,11 +39,11 @@ or three minutes after a launch.
 ## Emulators at 60 Hz
 
 Campaign `real2` (2026-11-14): 22 scenes, a minute each, every arm on the same
-running scene. "First governor" is the 2026-11-09 design; "astra-governor" is
+running scene. "First governor" is the 2026-11-09 design; "Governor" is
 the build of 2026-11-14, before the light, GPU-bound and thrifty rules (none of
 which these scenes trigger except Soulcalibur and F-Zero GX).
 
-| Scene | Vendor, Balance | First governor, Balance | astra-governor, Balance | astra-governor, Rise | Diablo |
+| Scene | Vendor, Balance | First governor, Balance | Governor, Balance | Governor, Rise | Diablo |
 | --- | --- | --- | --- | --- | --- |
 | Mario Galaxy, castle gate (Wii) | 0% clean, 3.7 W, 71% speed | 100%, 4.3 W | 100%, 4.5 W | 100%, 4.5 W | 100%, 7.5 W |
 | Mario Galaxy, festival (Wii) | 66%, 4.2 W | 100%, 4.8 W | 100%, 4.8 W | 100%, 4.7 W | 100%, 8.7 W |
@@ -81,7 +81,7 @@ set ([vendor-system.md](vendor-system.md#refresh-rate)).
 
 **Synthetic game that can run at the panel's rate** (`panel2`, `panel3`, Rise):
 
-| Panel | astra-governor | Vendor alone | Diablo |
+| Panel | Governor | Vendor alone | Diablo |
 | --- | --- | --- | --- |
 | 90 Hz | 90.4 fps, every second clean, 7.0 W | 90.4 fps, clean, 5.1 W | |
 | 120 Hz | 120.5 fps, every second clean, 6.8 W | 120.5 fps, clean, 5.0 W | 120.5 fps, 10.0 W |
@@ -93,7 +93,7 @@ governor wants the busy share under 80%, which costs 1.8 W for the same frames.
 
 **SuperTuxKart, a race driven by scripted touches** (`native1`, `native3`, Rise):
 
-| Panel | astra-governor | Vendor alone |
+| Panel | Governor | Vendor alone |
 | --- | --- | --- |
 | 120 Hz, 2 min | 120.54 fps, every second clean, 6.6 W | 120.50 fps, 98.4% clean, 6.3 W |
 | 144 Hz, 90 s | 144.65 fps, every second clean, 7.8 W | 143.93 fps, 93.7% clean, 7.1 W |
@@ -138,7 +138,7 @@ A game like this wants its own frame cap.
 Artemis and Moonlight from a desktop host (`stream1`-`stream5`). Artemis is a
 Game Space app, so it gets a game scene and both frame governors.
 
-| Stream | astra-governor | Vendor alone |
+| Stream | Governor | Vendor alone |
 | --- | --- | --- |
 | 1080p60, 60 Hz panel | 3.13 W, decode 6.4 ms | 3.13 W, 8.0 ms |
 | 1080p120, 120 Hz panel | 3.67 W, 5.8 ms | 3.70 W, 7.3 ms |

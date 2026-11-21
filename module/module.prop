@@ -1,6 +1,6 @@
 id=astra
-name=Astra
-version=0.4.1
-versionCode=5
+name=RedMagic Astra Tuner
+version=0.4.2
+versionCode=6
 author=aurokin
-description=For the RedMagic Astra (NP05J). Governor: in Game Space games outside Diablo, holds each game's frame rate with the lowest CPU and GPU clocks that keep it on time. Display calibration (off until switched on in the Astra app): corrects the panel's refresh rates, 60.27 Hz to 60.00. Disable or remove this module to return to stock behaviour.
+description=For the RedMagic Astra (NP05J). Governor: in Game Space games outside Diablo, holds each game's frame rate with the lowest CPU and GPU clocks that keep it on time. Display calibration (off until switched on in the app): corrects the panel's refresh rates, 60.27 Hz to 60.00. Disable or remove this module to return to stock behaviour.

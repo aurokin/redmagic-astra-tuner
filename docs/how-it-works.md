@@ -24,14 +24,14 @@ and the app; [the display](display.md#how-calibration-works) explains it.
   Games end up on the edge of their deadline: Super Mario Galaxy's heavy scene
   at 71% of its speed in Balance, the GPU at its lowest clock. Diablo fixes it
   by pinning every clock at the top, at twice the power or more.
-- **What astra-governor does.** It takes over one decision: how *low* the
+- **What the governor does.** It takes over one decision: how *low* the
   clocks may go during a game. It watches every frame the game shows, starts
   with ample minimums and lowers them a step at a time while the game stays on
   time; a late frame sends them back up. During games it holds IFAS's cap at
   the mode's ceiling. It leaves the mode's maximums and the vendor's heat limits
   alone, and hands everything back when the game ends.
 
-## The stack, with astra-governor in it
+## The stack, with the governor in it
 
 ```
 Game Space mode           sets the maximums per game ............ untouched
@@ -40,7 +40,7 @@ IFAS (kernel module)      lowers a CPU cap while frames are ..... during games: 
   |                       on time                                 parameters rewritten,
   |                                                               cap stays at the ceiling
   |
-walt (CPU),               pick the clock between the minimum .... astra-governor sets
+walt (CPU),               pick the clock between the minimum .... the governor sets
 KGSL devfreq (GPU)        and the maximum they are given          the minimums
   |
 thermal-engine            cuts the maximums on board heat ....... untouched; in Rise the
@@ -49,7 +49,7 @@ thermal-engine            cuts the maximums on board heat ....... untouched; in 
 ```
 
 On the CPU every limit is a separate request on the same cpufreq policy: the
-lowest maximum wins, and the highest minimum up to it. astra-governor adds
+lowest maximum wins, and the highest minimum up to it. The governor adds
 requests of its own and cannot remove the vendor's; a minimum it sets is never
 above the vendor's current maximum.
 
@@ -63,9 +63,9 @@ above the vendor's current maximum.
 | Anything else, screen on | holds the six performance cores' minimum at 1152 MHz (the vendor's is 384); watches no frames |
 | Screen off | nothing |
 
-## Each vendor part, and what astra-governor does with it
+## Each vendor part, and what the governor does with it
 
-| Vendor part | What astra-governor does |
+| Vendor part | What the governor does |
 | --- | --- |
 | Game Space modes and their ceilings | nothing; it works beneath them |
 | Whether a game scene is active | reads `/sys/kernel/ifas/ifas_enable`, never writes it |
@@ -129,7 +129,7 @@ Every half second, while a game scene is active:
 - `/enable` and `/disable` on `127.0.0.1:7878` switch control on and off
   without stopping the daemon. With `-state FILE` (the module passes it) the
   choice is kept in that file, so a restart or a reboot starts as it was left.
-  This is the switch in the Astra app.
+  This is the switch in the app.
 
 These hand-overs are what `recorder/handover.py` in the test bench checks on
 the tablet; see [development.md](development.md#checking-a-build-on-the-tablet).
@@ -164,7 +164,7 @@ One Magisk module, id `astra`, carries both halves and the app:
 How the pieces talk:
 
 ```
-Astra app ──── GET 127.0.0.1:7878/status, /enable, /disable ───────── astrad2
+The app ────── GET 127.0.0.1:7878/status, /enable, /disable ───────── astrad2
     │
     ├───────── GET 127.0.0.1:7879/calibration (read-only) ─────────── panel-service
     │                                                                      │ reads

@@ -80,7 +80,7 @@ public final class MainActivity extends Activity {
         panes.addView(paneRule);
         panes.addView(governorPane());
         page.addView(panes, Ui.fill());
-        page.addView(ui.text("Astra " + version() + " for the RedMagic Astra (NP05J). Remove the Astra module in Magisk "
+        page.addView(ui.text("RedMagic Astra Tuner " + version() + ", for the RedMagic Astra (NP05J). Remove the module in Magisk "
                 + "to return the tablet to stock.", 13, Ui.DIM, 400), ui.below(Ui.fill(), 28));
 
         // Wide enough for two panes side by side, or one above the other.
@@ -244,7 +244,7 @@ public final class MainActivity extends Activity {
         governorAsked = null;
         if (!getSystemService(UserManager.class).isSystemUser()) {
             // Device-protected storage is per user, and the service reads the owner's.
-            storageMessage = "Open Astra as the tablet's owner to change calibration.";
+            storageMessage = "Open the app as the tablet's owner to change calibration.";
             render();
         } else {
             storageMessage = null;
@@ -381,7 +381,7 @@ public final class MainActivity extends Activity {
         } else if (saving) {
             text = "Saving…";
         } else if (calibration == null) {
-            text = "The calibration service isn’t running. Check that the Astra module is switched on in Magisk, then reboot.";
+            text = "The calibration service isn’t running. Check that the RedMagic Astra Tuner module is switched on in Magisk, then reboot.";
             color = Ui.CORAL;
         } else if (calibration.optBoolean("enabled") != desired.on || !desired.preset.value.equals(calibration.optString("rate"))) {
             // The service has not picked up the saved choice yet.
@@ -412,7 +412,7 @@ public final class MainActivity extends Activity {
         if (s == null) {
             setText(governorState, "Not running");
             setText(governorNote, "It starts about 15 seconds after the tablet boots. If this stays, check that the "
-                    + "Astra module is switched on in Magisk.");
+                    + "RedMagic Astra Tuner module is switched on in Magisk.");
             setText(board, "–");
             setText(battery, "–");
             return;

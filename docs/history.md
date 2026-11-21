@@ -10,8 +10,8 @@ Dates are 2026.
 | 11-08 | Tablet unlocked and rooted with Magisk 31.1 on stock firmware; a full partition backup kept |
 | 11-09 to 11-10 | **First governor** (`astrad`): bottom-up control of the GPU minimum and the CPU governor's boost, from a once-a-second frame histogram. Super Mario Galaxy's heavy scene from 71% speed to 100% in Balance. The panel's real rates measured |
 | 11-10 to 11-12 | Display timing investigated at length; no safe correction ([display.md](display.md)) |
-| 11-13 | Test bench, synthetic load app and 22 staged scenes. The first governor found to settle starved games on a clean half rate. **astra-governor** (`astrad2`) written: top-down, every frame, CPU and GPU minimums |
-| 11-14 | First full comparison (`real2`); astra-governor installed as the tablet's governor; hand-over checks |
+| 11-13 | Test bench, synthetic load app and 22 staged scenes. The first governor found to settle starved games on a clean half rate. **The present governor** (`astrad2`) written: top-down, every frame, CPU and GPU minimums |
+| 11-14 | First full comparison (`real2`); the present governor installed as the tablet's governor; hand-over checks |
 | 11-15 | Heat control (`-heat 48`); the thrifty GPU rule near the heat target; non-game floor (`-base 1152`); streams rested on low clocks; three faults fixed |
 | 11-16 | Panel rates above 60 Hz; native games; Chrome; GPU-bound rule; long runs at 165 Hz; fan tests; the repository split out of the test bench |
 | 11-17 | The thrifty GPU rule from the start (`-thrifty`); IFAS's GPU policy held off. Release 0.3, the governor alone |
@@ -19,6 +19,7 @@ Dates are 2026.
 | 11-19 | GBA and NES choices; the mode change made through SurfaceFlinger instead of the saved setting. Tablet updated to RedMagicOS 11.0.8MR1 keeping root; every rate measured again. A second restart on waking; a matched comparison could not reproduce it. The governor measured again on the new build. **One module, one app**: the governor's switch remembered, calibration off until switched on. That night the restart was reproduced by switching the screen off inside calibration runs, its cause found, and calibration moved to the display driver's locked command path |
 | 11-20 | Frames held too long counted for 30 fps content; everything measured again on the final build. Release 0.4 |
 | 11-20 | Why Shadow of the Colossus paced worse in Rise and Diablo: the panel's rate, and in Rise the six performance cores left at 384 MHz. A minimum for them in games; calibration held off after a restart by itself; everything measured again. Release 0.4.1 |
+| 11-21 | Calibration cut short 1,999 more times overnight on 0.4.1 with no restart ([display.md](display.md#restarts-on-waking-found-and-fixed)). The package named **RedMagic Astra Tuner**: the repository (it was `astra-governor`), the module and the app (they were Astra) and the zip. The daemons are 0.4.1's byte for byte |
 
 ## Why the first governor was replaced
 
@@ -27,7 +28,7 @@ frames were late. On the synthetic loads of 11-13 (`sweep1`, `sweep2`) it held
 a GPU-heavy load at exactly half its rate (50.3% speed, 0% clean) and a 30 fps
 load with a share of every second late. A starved game that settles on a clean
 fraction of the panel's rate looks like a healthy game at that rate, and
-nothing raises the clocks. astra-governor learns the target at ample clocks
+nothing raises the clocks. The present governor learns the target at ample clocks
 first and works down; on the same loads (`sweep2`, `sweep3`) it held 100% with
 97-100% of seconds clean.
 

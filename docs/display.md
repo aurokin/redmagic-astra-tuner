@@ -119,7 +119,7 @@ every screen-off. Calibration is therefore reapplied after every wake.
 | `panel-service` (Go, root) | decides when: waits for boot and for a display that has been steadily on, runs the helper once per wake, and reports its state on `127.0.0.1:7879/calibration` (read-only) |
 | `panel-table.sh` (root) | the only thing that talks to the controller: checks, writes and verifies the ten words through the display driver's command files (`tx_cmd` and `rx_cmd` of connector `DSI-1` in debugfs, which it mounts at `/dev/astra-panel-debug`), keeping a journal of what it owns |
 | `panel-mode.jar` (`PanelMode.java`, run with `app_process`) | the momentary mode change through SurfaceFlinger, with a receipt so an interrupted one is undone |
-| The Astra app | saves the owner's choice in a file in its device-protected storage; the service reads it. The app has no access to the panel |
+| The app | saves the owner's choice in a file in its device-protected storage; the service reads it. The app has no access to the panel |
 
 ### When it runs
 

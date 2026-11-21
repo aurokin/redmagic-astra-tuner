@@ -6,7 +6,7 @@ panel's refresh rate, as far as it was observed on one tablet. Everything here
 was read from the running system or measured; where a behaviour is inferred
 rather than seen, it says so.
 
-[How it works](how-it-works.md) explains where astra-governor sits in this.
+[How it works](how-it-works.md) explains where the governor sits in this.
 
 ## Hardware the software controls
 
