@@ -60,9 +60,6 @@ switch the module off there: within a few seconds the governor hands the
 clocks back and the panel returns to factory timing. Switch it back on and
 reboot to resume.
 
-Coming from the separate `astra-governor` 0.3 and Astra Display Calibration
-modules: install this zip over them. It replaces both.
-
 ## Using the governor
 
 It is on after installing. **Astra → Governor** shows what it is doing and has
