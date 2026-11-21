@@ -181,3 +181,15 @@ Removing the module returns the tablet to stock behaviour after a reboot.
 [docs/](docs/README.md) explains how both parts work, how the RedMagic system
 decides clocks and heat limits, the display, every measurement, and how to
 develop and test changes.
+
+## License
+
+[MIT](LICENSE): use it, change it and ship it, in open or closed software,
+as long as the copyright notice stays with it. That covers the code, the
+documentation and the measurements. Bringing this to other devices is
+welcome, and so is RedMagic taking whatever helps the stock software.
+
+The one file that is not ours is
+`module/zip/META-INF/com/google/android/update-binary`, the standard installer
+stub every Magisk module carries, from the [Magisk](https://github.com/topjohnwu/Magisk)
+project.
